@@ -41,14 +41,19 @@ opkg update && opkg install usbutils nano kmod-mt7921u
 10. Refresh WIFI  
 ```wifi```
 
-11. Ensure WIFI devices are enabled  
+11. Ensure WIFI devices are enabled and country set
 ```nano /etc/config/wireless```
 
-Set: ```option disabled '0'``` on all wireless devices
+Set: ```option disabled '0'``` on all wireless devices  
+Set: ```option country 'AU'``` on all wireless devices  
 
 ```
 uci commit wireless
 wifi
 ```
 
-11. Browse to wireless settings and configure wireless
+11. Browse to wireless settings and configure wireless:
+
+> Connect WUS036AXML to house WIFI  
+> Configure Raspberry PI WIFI as access point (make sure you set channel - auto will cause it to be disabled)  
+> Make sure the Raspberry PI WIFI AP is connected to both LAN and WWAN (bridge)
