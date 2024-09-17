@@ -29,7 +29,7 @@
   > NOTE: using AWUS036AXML here
 
    click update lists  
-   install packages: nano kmod-mt7921s  
+   install packages: nano kmod-mt7921u  
    or at command line:
 
 ```bash
@@ -41,13 +41,12 @@ opkg update && opkg install usbutils nano kmod-mt7921u
 10. Refresh WIFI  
 ```wifi```
 
-11. Ensure WIFI devices are enabled and country set
+11. Ensure WIFI devices are enabled
 ```nano /etc/config/wireless```
 
-Set: ```option disabled '0'``` on all wireless devices  
-Set: ```option country 'AU'``` on all wireless devices  
+> Set: ```option disabled '0'``` on all wireless devices  
 
-```
+```bash
 uci commit wireless
 wifi
 ```
@@ -57,3 +56,21 @@ wifi
 > Connect WUS036AXML to house WIFI  
 > Configure Raspberry PI WIFI as access point (make sure you set channel - auto will cause it to be disabled)  
 > Make sure the Raspberry PI WIFI AP is connected to both LAN and WWAN (bridge)
+
+12. Configure files
+
+>*** Replace wireless passwords with real ones  
+
+> dhcp  
+> firewall  
+> network  
+> wireless  
+
+13. Get copy of files
+
+```bash
+scp root@10.2.3.1:/etc/config/dhcp ./openwrt/dhcp
+scp root@10.2.3.1:/etc/config/firewall ./openwrt/firewall
+scp root@10.2.3.1:/etc/config/network ./openwrt/network
+scp root@10.2.3.1:/etc/config/wireless ./openwrt/wireless
+```
