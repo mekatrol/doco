@@ -1,6 +1,6 @@
 
 ```bash
-nano /etc/systemd/timesyncd.conf:
+sudo nano /etc/systemd/timesyncd.conf
 ```
 
 > Root distance needs to be high for local stratum 1 from raspberry PI client (sounds stupid)
