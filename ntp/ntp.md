@@ -7,7 +7,6 @@ sudo nano /etc/systemd/timesyncd.conf
 
 ```ini
 [Time]  
-NTP=10.2.2.200  
-# FallbackNTP=  
+NTP=ntp.home.wojcik.com.au  
 RootDistanceMaxSec=60  
 ```
