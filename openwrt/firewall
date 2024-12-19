@@ -26,10 +26,10 @@ config forwarding
 	option dest 'wan'
 
 config rule
-        option name 'Allow LAN to access management web interface'
-        option src 'wan'
-        option target 'ACCEPT'
-        option dest_port '80'
+	option name 'Allow LAN to access management web interface'
+	option src 'wan'
+	option target 'ACCEPT'
+	option dest_port '80'
 
 config rule
 	option name 'Allow-DHCP-Renew'
