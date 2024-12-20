@@ -32,5 +32,10 @@ sudo date -s '2024-12-20 10:00:00'
 
 # OR
 
+# If have compiled ntp-sync repo
+sudo date -s "$(./ntp-sync -s ntp.lan | grep ntp_time: | cut -d' ' -f2-3)"
+
+# OR from Google
+
 sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
 ```
