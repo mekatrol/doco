@@ -69,3 +69,22 @@ If it doesn’t, you can add this to /etc/rc.local before exit 0:
 ```bash
 bluetoothctl connect XX:XX:XX:XX:XX:XX
 ```
+## Install python dependencies
+
+```bash
+sudo apt update
+sudo apt install python3-evdev -y
+```
+
+## Run the python app
+
+```bash
+chmod +x xbox_monitor.py
+./xbox_monitor.py
+```
+
+If you know the exact event node (e.g. /dev/input/event3), you can pass it:
+
+```bash
+./xbox_monitor.py /dev/input/event3
+```
